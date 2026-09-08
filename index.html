@@ -3,299 +3,443 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Manpreet ❤️</title>
+<title>Happy Birthday Manpreet ✨</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#ff9ecf,#c58cff);
-overflow:hidden;
-height:100vh;
-color:white;
+    background:#000;
+    overflow-x:hidden;
+    color:white;
 }
 
-.screen{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:20px;
-text-align:center;
-transition:1s;
+.gold{
+    color:#d4af37;
 }
 
-.hidden{
-opacity:0;
-pointer-events:none;
-transform:scale(0.9);
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:
+    radial-gradient(circle at center,
+    rgba(212,175,55,0.15),
+    black 70%);
+    text-align:center;
 }
 
-h1{
-font-size:2.4rem;
-margin-bottom:15px;
+.hero h1{
+    font-size:4rem;
+    color:#d4af37;
+    font-family:'Cinzel',serif;
+    animation:glow 2s infinite alternate;
 }
 
-p{
-max-width:600px;
-line-height:1.7;
-font-size:1.1rem;
+.hero p{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:white;
 }
 
-.btn{
-margin-top:30px;
-padding:14px 35px;
-border:none;
-border-radius:50px;
-background:white;
-color:#ff4f9a;
-font-weight:bold;
-font-size:1rem;
-cursor:pointer;
-box-shadow:0 8px 25px rgba(0,0,0,0.2);
-transition:.3s;
+    to{
+        text-shadow:0 0 30px #d4af37,
+                    0 0 60px #d4af37;
+    }
+
+
+.open-btn{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#d4af37;
+    color:black;
+    font-weight:bold;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.4s;
 }
 
-.btn:hover{
-transform:scale(1.08);
+.open-btn:hover{
+    transform:scale(1.08);
 }
 
-.photo{
-width:280px;
-height:380px;
-object-fit:cover;
-border-radius:25px;
-border:6px solid white;
-box-shadow:0 10px 40px rgba(0,0,0,0.3);
-margin-bottom:20px;
+.section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:40px 20px;
 }
 
-.heart{
-position:absolute;
-font-size:20px;
-animation:float 8s linear infinite;
-opacity:0.8;
+.calendar-box{
+    width:350px;
+    background:#111;
+    border:3px solid #d4af37;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 40px rgba(212,175,55,.3);
 }
 
-@keyframes float{
-from{
-transform:translateY(100vh);
-}
-to{
-transform:translateY(-120vh);
-}
-}
-
-.cake{
-font-size:90px;
-margin-bottom:20px;
-animation:bounce 2s infinite;
+.month{
+    background:#d4af37;
+    color:black;
+    text-align:center;
+    padding:15px;
+    font-size:2rem;
+    font-weight:bold;
 }
 
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+    padding:15px;
+}
+.day{
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:500;
 }
 
-.final{
-font-size:3rem;
-font-weight:700;
-}
-
-.small{
-margin-top:20px;
-font-size:1.2rem;
-}
-
-.glow{
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{
-text-shadow:0 0 10px white;
-}
-to{
-text-shadow:0 0 30px white;
-}
-}
-
-.tap{
-position:absolute;
-bottom:30px;
-font-size:.9rem;
-opacity:.8;
-animation:pulse 1.5s infinite;
+.special{
+    border:3px solid #d4af37;
+    border-radius:50%;
+    color:#d4af37;
+    animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-50%{opacity:.3;}
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+        box-shadow:0 0 20px #d4af37;
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.zoom-date{
+    animation:zoomDate 3s forwards;
+}
+
+@keyframes zoomDate{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+.gallery-title{
+    color:#d4af37;
+    font-size:2.8rem;
+    text-align:center;
+    margin-bottom:30px;
+    font-family:'Cinzel',serif;
+}
+
+.gallery-container{
+    position:relative;
+    width:350px;
+    height:500px;
+}
+.gallery-slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+    border:3px solid #d4af37;
+    opacity:0;
+    transform:scale(.85) rotate(-5deg);
+    transition:1s;
+    box-shadow:0 0 30px rgba(212,175,55,.4);
+}
+
+.gallery-slide.active{
+    opacity:1;
+    transform:scale(1) rotate(0);
+}
+
+.caption{
+    color:white;
+    margin-top:25px;
+    font-size:1.2rem;
+    text-align:center;
+    max-width:600px;
+}
+
+.final-slide{
+    text-align:center;
+}
+
+.final-slide h1{
+    color:#d4af37;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.final-slide p{
+    font-size:1.3rem;
+    color:white;
+}
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    font-size:24px;
+    pointer-events:none;
 }
 </style>
 </head>
+
 <body>
 
-<div id="hearts"></div>
-
-<!-- Screen 1 -->
-<div class="screen" id="s1">
-<h1 class="glow">🎁 A Special Surprise 🎁</h1>
-<p>Someone has prepared something special for you...</p>
-<button class="btn" onclick="next(1)">Open Gift</button>
-</div>
-
-<!-- Screen 2 -->
-<div class="screen hidden" id="s2">
-<img src="manpreet.jpg.jpeg" class="photo">
-<h1>🌸 Dear Manpreet 🌸</h1>
-<p>
-<h1>✨ To My HG ✨</h1>
+<section class="hero">
+<h1>Happy Birthday Manpreet ✨</h1>
 
 <p>
-Manpreet, you've been more than just a friend—
-you've been my HG, someone who makes ordinary
-days more fun and memorable.
-
-Thank you for the laughs, the memories,
-and all the moments we've shared.
-
-On your special day, I wish you happiness,
-success, and everything you've been working for.
-
-Keep smiling, keep shining,
-and keep being the amazing person you are. 💖
-</p>
+A little surprise made specially for you...
 </p>
 
-<div class="tap">Tap Anywhere</div>
-</div>
-
-<!-- Screen 3 -->
-<div class="screen hidden" id="s3">
-<h1>✨ A Message For You ✨</h1>
-
-<p>
-Every birthday marks a new beginning.
-May this year bring exciting opportunities,
-wonderful memories,
-good health,
-and endless reasons to smile.
-</p>
-
-<div class="tap">Tap Anywhere</div>
-</div>
-
-<!-- Screen 4 -->
-<div class="screen hidden" id="s4">
-<div class="cake">🎂</div>
-
-<h1 class="glow">Happy Birthday</h1>
-<h1 class="glow">Manpreet ❤️</h1>
-
-<p class="small">
-May all your wishes come true and may this year
-be your best one yet.
-</p>
-
-<p class="small">
-You deserve all the happiness in the world.
-</p>
-
-<button class="btn" onclick="showFinal()">
-One Last Surprise
+<button class="open-btn" onclick="showCalendar()">
+Open Surprise 🎁
 </button>
+
+</section>
+<section class="section" id="calendarSection" style="display:none;">
+
+<div class="calendar-box">
+
+<div class="month">
+September
 </div>
 
-<!-- Screen 5 -->
-<div class="screen hidden" id="s5">
-<h1 class="final glow">🎉 HAPPY BIRTHDAY SUAR!!! 🎉</h1>
-<h1 class="glow">MANPREET ❤️</h1>
+<div class="calendar-grid">
 
-<p style="margin-top:25px;font-size:1.3rem;">
-Have an amazing year ahead!
-</p>
+<div class="day">1</div>
+<div class="day">2</div>
+<div class="day">3</div>
+<div class="day">4</div>
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
 
-<p style="margin-top:20px;font-size:1.1rem;">
-— From Your HB 💖
-</p>
+<div class="day">8</div>
+<div class="day">9</div>
+<div class="day">10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+
+<div class="day special" id="birthdayDate">
+14
 </div>
+
+<div class="day">15</div>
+<div class="day">16</div>
+<div class="day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+
+<div class="day">22</div>
+<div class="day">23</div>
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+
+<div class="day">29</div>
+<div class="day">30</div>
+
+</div>
+
+</div>
+
+<p style="margin-top:30px;color:#d4af37;font-size:1.3rem;">
+✨ The special day is coming... ✨
+</p>
+
+</section>
+
+<section class="section" id="gallerySection" style="display:none;">
+
+<h1 class="gallery-title">
+Some Beautiful Memories 📸
+</h1>
+
+<div class="gallery-container">
+
+<img src="manpreet.jpg.jpeg" class="gallery-slide active">
+<img src="photo1.jpg.jpeg" class="gallery-slide">
+<img src="photo2.jpg.jpeg" class="gallery-slide">
+<img src="photo3.jpg.jpeg" class="gallery-slide">
+<img src="photo4.jpg.jpeg" class="gallery-slide">
+
+</div>
+<div class="caption" id="caption">
+That smile deserves its own fan club ✨
+</div>
+
+</section>
+
+<section class="section final-slide" id="finalSection" style="display:none;">
+
+<h1>🎂 Happy Birthday Manpreet 🎂</h1>
+
+<p>
+May your year be filled with happiness,
+success, good health and countless smiles.
+</p>
+
+<p style="margin-top:25px;">
+To My HG 💛
+</p>
+
+<p style="margin-top:15px;">
+Thank you for all the memories,
+the laughs and the good times.
+</p>
+
+<p style="margin-top:30px;font-size:1.6rem;color:#d4af37;">
+Kaash saath mai bhi koi pic hoti.. 🤧🤧
+</p>
+
+</section>
 
 <script>
 
-function createHearts(){
-for(let i=0;i<40;i++){
+function showCalendar(){
 
-let h=document.createElement("div");
+document.querySelector(".hero").style.display="none";
 
-h.className="heart";
+document.getElementById("calendarSection").style.display="flex";
 
-let emojis=["💖","💕","💗","💜","✨"];
+setTimeout(function(){
 
-h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+document.getElementById("birthdayDate")
+.classList.add("zoom-date");
 
-h.style.left=Math.random()*100+"vw";
+},3000);
 
-h.style.animationDuration=(5+Math.random()*7)+"s";
+setTimeout(function(){
 
-h.style.fontSize=(15+Math.random()*25)+"px";
+document.getElementById("calendarSection")
+.style.display="none";
 
-document.body.appendChild(h);
-}
-}
+document.getElementById("gallerySection")
+.style.display="flex";
 
-createHearts();
+startGallery();
 
-function next(n){
-
-document.getElementById("s"+n).classList.add("hidden");
-document.getElementById("s"+(n+1)).classList.remove("hidden");
+},5500);
 
 }
 
-document.getElementById("s2").onclick=()=>{
-next(2);
-};
+const slides =
+document.querySelectorAll(".gallery-slide");
 
-document.getElementById("s3").onclick=()=>{
-next(3);
-};
+const caption =
+document.getElementById("caption");
 
-function showFinal(){
+const messages = [
 
-document.getElementById("s4").classList.add("hidden");
-document.getElementById("s5").classList.remove("hidden");
+"That smile deserves its own fan club ✨",
 
-for(let i=0;i<100;i++){
+"Some people are naturally photogenic 📸",
 
-let conf=document.createElement("div");
+"A picture full of confidence 💛",
 
-conf.innerHTML="🎉";
+"Saving beautiful memories for today 🎂",
 
-conf.style.position="absolute";
-conf.style.left=Math.random()*100+"vw";
-conf.style.top="-20px";
-conf.style.fontSize="25px";
+"Birthday girl energy unlocked 👑"
+
+];
+let current = 0;
+
+function startGallery(){
+
+setInterval(function(){
+
+slides[current].classList.remove("active");
+
+current = (current + 1) % slides.length;
+
+slides[current].classList.add("active");
+
+caption.innerText = messages[current];
+
+},3000);
+
+setTimeout(function(){
+
+document.getElementById("gallerySection")
+.style.display="none";
+
+document.getElementById("finalSection")
+.style.display="flex";
+
+launchConfetti();
+
+},16000);
+
+}
+
+function launchConfetti(){
+
+for(let i=0;i<80;i++){
+
+let conf = document.createElement("div");
+
+conf.className = "confetti";
+
+conf.innerHTML =
+Math.random()>0.5 ? "✨" : "🎉";
+
+conf.style.left =
+Math.random()*100 + "vw";
+
+conf.animate([
+{
+transform:'translateY(0px) rotate(0deg)'
+},
+{
+transform:'translateY(110vh) rotate(720deg)'
+}
+],
+{
+duration:3000 + Math.random()*3000
+});
 
 document.body.appendChild(conf);
 
-conf.animate([
-{transform:'translateY(0px) rotate(0deg)'},
-{transform:'translateY(110vh) rotate(720deg)'}
-],{
-duration:3000+Math.random()*3000
-});
 }
+
 }
+
 </script>
 
 </body>
