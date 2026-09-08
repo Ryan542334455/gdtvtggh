@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Manpreet ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9ecf,#c58cff);
+overflow:hidden;
+height:100vh;
+color:white;
+}
+
+.screen{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+text-align:center;
+transition:1s;
+}
+
+.hidden{
+opacity:0;
+pointer-events:none;
+transform:scale(0.9);
+}
+
+h1{
+font-size:2.4rem;
+margin-bottom:15px;
+}
+
+p{
+max-width:600px;
+line-height:1.7;
+font-size:1.1rem;
+}
+
+.btn{
+margin-top:30px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff4f9a;
+font-weight:bold;
+font-size:1rem;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+.photo{
+width:280px;
+height:380px;
+object-fit:cover;
+border-radius:25px;
+border:6px solid white;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+margin-bottom:20px;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:0.8;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-120vh);
+}
+}
+
+.cake{
+font-size:90px;
+margin-bottom:20px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+}
+
+.final{
+font-size:3rem;
+font-weight:700;
+}
+
+.small{
+margin-top:20px;
+font-size:1.2rem;
+}
+
+.glow{
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 30px white;
+}
+}
+
+.tap{
+position:absolute;
+bottom:30px;
+font-size:.9rem;
+opacity:.8;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{opacity:.3;}
+}
+</style>
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<!-- Screen 1 -->
+<div class="screen" id="s1">
+<h1 class="glow">🎁 A Special Surprise 🎁</h1>
+<p>Someone has prepared something special for you...</p>
+<button class="btn" onclick="next(1)">Open Gift</button>
+</div>
+
+<!-- Screen 2 -->
+<div class="screen hidden" id="s2">
+<img src="manpreet.jpg.jpeg" class="photo">
+<h1>🌸 Dear Manpreet 🌸</h1>
+<p>
+<h1>✨ To My HG ✨</h1>
+
+<p>
+Manpreet, you've been more than just a friend—
+you've been my HG, someone who makes ordinary
+days more fun and memorable.
+
+Thank you for the laughs, the memories,
+and all the moments we've shared.
+
+On your special day, I wish you happiness,
+success, and everything you've been working for.
+
+Keep smiling, keep shining,
+and keep being the amazing person you are. 💖
+</p>
+</p>
+
+<div class="tap">Tap Anywhere</div>
+</div>
+
+<!-- Screen 3 -->
+<div class="screen hidden" id="s3">
+<h1>✨ A Message For You ✨</h1>
+
+<p>
+Every birthday marks a new beginning.
+May this year bring exciting opportunities,
+wonderful memories,
+good health,
+and endless reasons to smile.
+</p>
+
+<div class="tap">Tap Anywhere</div>
+</div>
+
+<!-- Screen 4 -->
+<div class="screen hidden" id="s4">
+<div class="cake">🎂</div>
+
+<h1 class="glow">Happy Birthday</h1>
+<h1 class="glow">Manpreet ❤️</h1>
+
+<p class="small">
+May all your wishes come true and may this year
+be your best one yet.
+</p>
+
+<p class="small">
+You deserve all the happiness in the world.
+</p>
+
+<button class="btn" onclick="showFinal()">
+One Last Surprise
+</button>
+</div>
+
+<!-- Screen 5 -->
+<div class="screen hidden" id="s5">
+<h1 class="final glow">🎉 HAPPY BIRTHDAY SUAR!!! 🎉</h1>
+<h1 class="glow">MANPREET ❤️</h1>
+
+<p style="margin-top:25px;font-size:1.3rem;">
+Have an amazing year ahead!
+</p>
+
+<p style="margin-top:20px;font-size:1.1rem;">
+— From Your HB 💖
+</p>
+</div>
+
+<script>
+
+function createHearts(){
+for(let i=0;i<40;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+let emojis=["💖","💕","💗","💜","✨"];
+
+h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(5+Math.random()*7)+"s";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(h);
+}
+}
+
+createHearts();
+
+function next(n){
+
+document.getElementById("s"+n).classList.add("hidden");
+document.getElementById("s"+(n+1)).classList.remove("hidden");
+
+}
+
+document.getElementById("s2").onclick=()=>{
+next(2);
+};
+
+document.getElementById("s3").onclick=()=>{
+next(3);
+};
+
+function showFinal(){
+
+document.getElementById("s4").classList.add("hidden");
+document.getElementById("s5").classList.remove("hidden");
+
+for(let i=0;i<100;i++){
+
+let conf=document.createElement("div");
+
+conf.innerHTML="🎉";
+
+conf.style.position="absolute";
+conf.style.left=Math.random()*100+"vw";
+conf.style.top="-20px";
+conf.style.fontSize="25px";
+
+document.body.appendChild(conf);
+
+conf.animate([
+{transform:'translateY(0px) rotate(0deg)'},
+{transform:'translateY(110vh) rotate(720deg)'}
+],{
+duration:3000+Math.random()*3000
+});
+}
+}
+</script>
+
+</body>
+</html>
